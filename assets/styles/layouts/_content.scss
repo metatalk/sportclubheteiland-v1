@@ -1,0 +1,74 @@
+.content-block {
+  padding: 30px;
+  @include media("≥desktop") {
+    padding: 45px;
+  }
+  text-align: center;
+  &--first {
+    padding-top: 60px;
+  }
+  &--titleless {
+    padding: 20px 30px 50px 30px;
+  }
+  &--info,
+  &--quote {
+    background: #FFF;
+    .info-content {
+      max-width: 550px;
+      margin: 0 auto;
+    }
+  }
+  &--info,
+  &--hero {
+    @include media("≥desktop") {
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+  &--hero {
+    @include brand-gradient;
+    color: #FFF;
+    position: relative;
+    padding-bottom: 80px;
+    @include media("≥desktop") {
+      min-height: 100vh;
+      padding: 80px;
+    }
+  }
+  &--afbeelding,
+  &--gallerij {
+    background: #FFF;
+    img {
+      width: 100%;
+      margin: 0 auto;
+    }
+    h2 {
+      margin-top: 0;
+    }
+  }
+  &--gallerij {
+    @include brand-gradient;
+    color: #FFF;
+    @include media("≥desktop") {
+      padding: 40px 50px 60px 50px;
+    }
+  }
+  &--quote {
+    &:after,
+    &:before {
+      content: "";
+      background: black;
+      width: 40px;
+      height: 5px;
+      display: block;
+      margin: 0 auto;
+    }
+  }
+  &--inverse {
+    background: #111;
+    color: #FFF;
+  }
+
+}

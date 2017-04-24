@@ -1,0 +1,213 @@
+.dialog,
+.dialog__overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  z-index: 30;
+}
+
+.dialog {
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translateY(-100%);
+}
+
+.dialog--open {
+  transform: translateY(0);
+}
+
+.dialog--menu {
+  overflow: hidden;
+}
+
+
+.dialog__overlay {
+  position: absolute;
+  z-index: 10;
+  background: rgba(55, 58, 71, 0.9);
+  .dialog--menu & {
+    background: #FFF;
+    @include media("≥desktop") {
+      background: #000;
+    }
+  }
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.dialog--open .dialog__overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.dialog__content {
+  width: 100vw;
+  max-height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+  min-width: 290px;
+  padding: 20px;
+  @include brand-gradient;
+  position: relative;
+  z-index: 15;
+  opacity: 0;
+  .dialog--menu & {
+    padding: 50px 0 20px 0;
+  }
+  .dialog--video & {
+    background: #000;
+  }
+  @include media("≥desktop") {
+    overflow: hidden;
+    max-width: 980px;
+    @include grid(2,0,0);
+    align-items: center;
+    justify-content: center;
+    .dialog--video & {
+      width: 100vw;
+      height: 100vh;
+      max-width: 1350px;
+      max-height: 700px;
+      background: #000;
+      padding: 0;
+    }
+    .dialog--menu & {
+      width: 100vw;
+      height: 100vh;
+      max-width: 1350px;
+      max-height: 700px;
+
+      background: #FFF;
+      padding: 0;
+    }
+  }
+}
+
+.dialog__info {
+  color: #FFF;
+  padding: 50px;
+  @include media("≥desktop") {
+    height: 100%;
+  }
+}
+
+.dialog__form {
+  padding: 40px;
+  background: #FFF;
+  @include media("≥desktop") {
+    padding: 60px;
+    height: 100%;
+  }
+}
+
+.dialog--open .dialog__content {
+  pointer-events: auto;
+}
+
+.dialog__close {
+  display: block;
+  position: absolute;
+  font-size: 32px;
+  top: 30px;
+  right: 40px;
+  cursor: pointer;
+  font-family: sans-serif;
+  font-weight: bold;
+  color: #222;
+  @include media("≥desktop") {
+    @include brand-text-primary;
+  }
+  .dialog--menu & {
+    display: none;
+  }
+  .dialog--video & {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    left: auto;
+    background: #111;
+    width: 40px;
+    height: 40px;
+    padding: 0 10px;
+  }
+}
+
+/* Content */
+
+.dialog__overlay {
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+}
+
+
+.dialog.dialog--open .dialog__content,
+.dialog.dialog--close .dialog__content {
+  -webkit-animation-duration: 0.4s;
+  animation-duration: 0.4s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+}
+
+.dialog.dialog--open .dialog__content {
+  -webkit-animation-name: anim-open;
+  animation-name: anim-open;
+  -webkit-animation-timing-function: cubic-bezier(0.7,0,0.3,1);
+  animation-timing-function: cubic-bezier(0.7,0,0.3,1);
+}
+
+.dialog.dialog--close .dialog__content {
+  -webkit-animation-name: anim-close;
+  animation-name: anim-close;
+}
+
+.dialog.dialog--open .dialog__animate,
+.dialog.dialog--open button {
+  -webkit-animation: anim-elem 0.4s both;
+  animation: anim-elem 0.4s both;
+}
+
+.dialog.dialog--open .dialog__animate {
+  -webkit-animation-delay: 0.25s;
+  animation-delay: 0.25s;
+}
+
+.dialog.dialog--open button {
+  -webkit-animation-delay: 0.15s;
+  animation-delay: 0.15s;
+}
+
+@-webkit-keyframes anim-open {
+  0% { opacity: 0; -webkit-transform: translate3d(0, -400px, 0); }
+  100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@keyframes anim-open {
+  0% { opacity: 0; -webkit-transform: translate3d(0, -400px, 0); transform: translate3d(0, -400px, 0); }
+  100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+}
+
+@-webkit-keyframes anim-close {
+  0% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+  100% { opacity: 0; -webkit-transform: translate3d(0, 100px, 0); }
+}
+
+@keyframes anim-close {
+  0% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+  100% { opacity: 0; -webkit-transform: translate3d(0, 100px, 0); transform: translate3d(0, 100px, 0); }
+}
+
+/* Inner elements animations */
+
+@-webkit-keyframes anim-elem {
+  0% { opacity: 0; -webkit-transform: translate3d(0, -100px, 0); }
+  100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); }
+}
+
+@keyframes anim-elem {
+  0% { opacity: 0; -webkit-transform: translate3d(0, -100px, 0); transform: translate3d(0, -100px, 0); }
+  100% { opacity: 1; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
+}

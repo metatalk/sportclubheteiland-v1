@@ -1,0 +1,28 @@
+.events {
+  background: #000;
+  color: #FFF;
+  padding: 30px;
+  a {
+    color: #FFF;
+  }
+  &__event {
+    max-width: 660px;
+    margin: 20px auto;
+    @include media("≥desktop") {
+      display: flex;
+    }
+  }
+}
+
+.event {
+  &__thumb {
+    width: 40%;
+    padding-right: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__content {
+    width: 60%;
+  }
+}

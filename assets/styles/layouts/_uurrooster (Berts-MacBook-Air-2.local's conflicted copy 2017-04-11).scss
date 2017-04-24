@@ -1,0 +1,109 @@
+.schedule {
+  position: relative;
+  @include media("≥desktop") {
+    min-height: 100vh;
+  }
+  &__day {
+    padding-top: 20px;
+    margin-top: 20px;
+    //border-top: 8px double black;
+    h3 {
+      text-align: center;
+    }
+  }
+  &__header {
+    text-align: center;
+    padding-bottom: 15px;
+    background: #191919;
+    color: #FFF;
+    background-position: center;
+    background-size: cover;
+    @include media("≥desktop") {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100vh;
+      width: 50vw;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    img {
+      max-width: 240px;
+      padding: 40px 0 5px 0;
+    }
+  }
+  &__rooster {
+    position: relative;
+    z-index: 1;
+    @include media("≥desktop") {
+      margin-left: 50vw;
+    }
+  }
+  &__table {
+    width: 100%;
+    max-width: 440px;
+    margin: 20px auto;
+    background: #F5F5F5;
+    tr:nth-child(even) {
+      background: #E6E6E6;
+    }
+    td {
+      padding: 14px 22px;
+    }
+  }
+
+  &__switch {
+    width: 100%;
+    max-width: 440px;
+    margin: 70px auto -15px auto;
+    position: relative;
+    padding-left: 10px;
+    &:before {
+      content: "";
+      width: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      border-bottom: 1px solid #BBB;
+    }
+  }
+
+  &__switch-link {
+    display: inline-block;
+    border: 1px solid #BBB;
+    border-bottom: none;
+    padding: 9px 12px;
+    text-decoration: none;
+    position: relative;
+    z-index: 100;
+    font-size: 14px;
+    font-weight: bold;
+    &.active {
+      border-bottom: 1px solid #FFF;
+    }
+  }
+
+  &__title {
+    font-weight: bold;
+  }
+  &__sport {
+    display: block;
+    padding-top: 3px;
+    font-weight: normal;
+    a {
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+  }
+  &__hour {
+    text-align: right;
+  }
+  &__footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+  }
+}

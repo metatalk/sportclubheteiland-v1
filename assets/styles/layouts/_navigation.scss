@@ -1,0 +1,198 @@
+.nav-trigger,
+.nav-trigger--sec {
+  position: fixed;
+  top: 20px;
+  right: 0;
+  text-align: right;
+  background: #FFF;
+  padding: 12px 18px;
+  width: 100px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?> <svg width='22px' height='18px' viewBox='0 0 22 18' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'> <g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd' stroke-linecap='square'> <g id='Group' transform='translate(1.000000, 0.000000)' stroke='#000000' stroke-width='2'> <path d='M0.5,1 L19.5,1' id='Line'></path> <path d='M0.5,9 L19.5,9' id='Line'></path> <path d='M0.5,17 L19.5,17' id='Line'></path> </g> </g> </svg>");
+  background-size: 16px 15px;
+  background-repeat: no-repeat;
+  background-position: 18px center;
+  z-index: 100000;
+  text-decoration: none;
+  font-size: 14px;
+  color: #000;
+  font-weight: 700;
+  transition: transform 0.2s linear;
+  .is-modal-open:not(.is-nav-active) & {
+    transform: translateX(100%);
+  }
+  .is-nav-active & {
+    z-index: 100000;
+    background-color: #222;
+    color: #FFF;
+    background-image: url("data:image/svg+xml;utf8,<?xml version='1.0' encoding='UTF-8' standalone='no'?> <svg width='16px' height='16px' viewBox='0 0 16 16' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'> <g id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'> <g id='Group-2' transform='translate(1.000000, 1.000000)' stroke='#FFF' stroke-width='2'> <path d='M8.8817842e-16,13.4350287 L13.4350289,0' id='Line'></path> <path d='M8.8817842e-16,13.4350287 L13.4350289,0' id='Line' transform='translate(6.717514, 6.717514) scale(-1, 1) translate(-6.717514, -6.717514) '></path> </g> </g> </svg>");
+  }
+
+}
+
+
+.nav-trigger--sec {
+    background: #000;
+    color: #FFF;
+    right: 110px;
+    text-transform: uppercase;
+    font-family: 'Oswald',sans-serif;
+    padding: 12px 18px 9px 18px;
+    width: auto;
+    .is-nav-active & {
+        background: #000;
+    }
+    &:visited {
+      color: #FFF;
+    }
+    img {
+      vertical-align: middle;
+      margin-left: 4px;
+      position: relative;
+      top: -3px;
+    }
+  }
+
+.dialog__content--sports {
+  padding: 4px;
+  //flex-direction: row-reverse;
+  background: #FFF;
+
+}
+
+.dialog--menu__sports {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  align-items: center;
+  padding-bottom: 50px;
+  @include media("≥desktop") {
+    width: 65%;
+    padding-bottom: 0;
+    height: 100%;
+  }
+}
+
+.dialog--menu__sport {
+  width: calc(100%/2);
+  height: 27vh;
+  flex-direction: column;
+  flex-grow: 1;
+  align-self: center;
+  justify-content: center;
+  text-align: center;
+  display: none;
+  position: relative;
+  overflow: hidden;
+  border: 2px solid #FFF;
+  .is-nav-active & {
+    display: flex;
+  }
+  @include media("≥desktop") {
+    height: 25%;
+    width: calc(100%/2);
+  }
+  img {
+    max-width: 65%;
+    max-height: 40%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 10;
+  }
+  &--fitness  { background: linear-gradient(to bottom right, transparentize($color-fitness-primary,0.15), transparentize($color-fitness-secundary,0.12)); }
+  &--boxing-physics  { background: linear-gradient(to bottom right, transparentize($color-boxing-primary,0.05),68%, transparentize($color-boxing-secundary,0.3)); }
+  &--yoga  { background: linear-gradient(to bottom right, transparentize($color-yoga-primary,0.05), transparentize($color-yoga-secundary,0.2)); }
+  &--urban-cross-workout  { background: linear-gradient(to bottom right, transparentize($color-urbancross-primary,0.14), transparentize($color-urbancross-secundary,0.2)); }
+  &--cycling  { img { max-height: 58%; } background: linear-gradient(to bottom right, transparentize($color-cycling-primary,0.06), transparentize($color-cycling-secundary,0.03)); }
+  &--body-fit  { background: linear-gradient(to bottom right, transparentize($color-bodyfit-primary,0.06), transparentize($color-bodyfit-secundary,0.16)); }
+  &--running  { background: linear-gradient(to bottom right, transparentize($color-running-primary,0.06), transparentize($color-running-secundary,0.33)); }
+  &--impact { background: linear-gradient(to bottom right, transparentize($color-impact-primary,0.16), transparentize($color-impact-secundary,0.26)); }
+
+  &:hover {
+    .dialog--menu__sport-bg {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.dialog--menu__sport-bg {
+  transition: transform 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.12;
+}
+
+.dialog--menu__info {
+  text-align: center;
+  color: #111;
+  @include media("≥desktop") {
+    width: 35%;
+    color: #111;
+  }
+  .sport__logo__icon {
+    max-width: 40px;
+  }
+  &--mobile {
+    @include media("≥desktop") {
+      display: none;
+    }
+  }
+}
+
+.dialog--menu__pages {
+  list-style: none;
+  padding: 20px 0;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  &--desktop {
+    @include media("<desktop") {
+      display: none;
+    }
+  }
+  @include media("≥desktop") {
+    padding: 30px 0;
+  }
+  a {
+    color: #000;
+    font-family: 'Oswald', sans-serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 4px 15px;
+    display: inline-block;
+  }
+}
+
+.dialog--menu__hours {
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  li:last-child {
+    margin-top:10px;
+  }
+}
+
+
+
+.dialog-menu__contact {
+  @include media("≥desktop") {
+    margin-top: 50px;
+  }
+  a {
+    color: #000;
+  }
+}
+
+.dialog--menu__logo {
+  display: none;
+  @include media("≥desktop") {
+    display: block;
+  }
+}

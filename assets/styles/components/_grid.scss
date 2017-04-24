@@ -1,10 +1,29 @@
-// Grid system
-.main {
-  @include make-sm-column($main-sm-columns);
-  .sidebar-primary & {
-    @include make-sm-column($main-sm-columns - $sidebar-sm-columns);
-  }
+// Global variables:
+// Unitless, interpreted as pixels
+$_fg_gutter: 14 !default; // gutter between columns. Set as desired.
+$_fg_padding: 6 !default; // padding for column boxes. Set as desired, can override for individual columns.
+
+// Mixins:
+// Main grid mixin
+@mixin grid($_fg_cols: 0, $_fg_conf_gutter: $_fg_gutter, $_fg_conf_padding: $_fg_padding) {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: (-1 * $_fg_conf_gutter) * 1px;
+
+  > * { padding: $_fg_conf_padding * 1px;
+    margin-left: $_fg_conf_gutter * 1px;
+    box-sizing: border-box; }
+
+  $_fg_calc_percent: (1/$_fg_cols) * 100%;
+  $_fg_calc_gutter_allowance: $_fg_conf_gutter * 1px;
+
+  > * { width: calc(#{$_fg_calc_percent} - #{$_fg_calc_gutter_allowance}); }
 }
-.sidebar {
-  @include make-sm-column($sidebar-sm-columns);
-}
+
+// width override for a column in wrap scenario:
+@mixin column_width($_fg_ratio, $_fg_conf_gutter: $_fg_gutter) {
+  $_fg_calc_percent: $_fg_ratio * 100%;
+  $_fg_calc_gutter: $_fg_conf_gutter * 1px;
+  width: calc(#{$_fg_calc_percent} - #{$_fg_calc_gutter});
+};

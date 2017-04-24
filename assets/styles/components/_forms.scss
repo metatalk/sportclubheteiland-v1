@@ -1,15 +1,21 @@
-// Search form
-.search-form {
-  @extend .form-inline;
+.gform_fields {
+
 }
-.search-form label {
-  font-weight: normal;
-  @extend .form-group;
+
+label,
+.gform_wrapper .top_label .gfield_label {
+  display: block;
+  margin: 8px 0 4px 0;
+  font-size: 18px;
+  font-family: 'Oswald',sans-serif;
+  font-weight: 400;
 }
-.search-form .search-field {
-  @extend .form-control;
+
+.subscribe-newsletter {
+  padding: 11px;
+  border: none;
+  color: #222;
+  font-size: 14px;
+  width: 250px;
 }
-.search-form .search-submit {
-  @extend .btn;
-  @extend .btn-default;
-}
+

@@ -2,18 +2,30 @@
 
 // Automatically injected Bower dependencies via wiredep (never manually edit this block)
 // bower:scss
-@import "../../bower_components/bootstrap-sass/assets/stylesheets/_bootstrap.scss";
+@import "../../bower_components/normalize-scss/_normalize.scss";
+@import "../../bower_components/include-media/dist/_include-media.scss";
+@import "../../bower_components/slick-carousel/slick/slick.scss";
 // endbower
 
+@import "common/mixins";
 @import "common/global";
+@import "common/typo";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/grid";
 @import "components/wp-classes";
+@import "components/dialog";
+@import "layouts/content";
 @import "layouts/header";
-@import "layouts/sidebar";
+@import "layouts/navigation";
 @import "layouts/footer";
 @import "layouts/pages";
+@import "layouts/home";
 @import "layouts/posts";
+@import "layouts/sport";
+@import "layouts/events";
+@import "layouts/uurrooster";
+@import "layouts/weare";
 @import "layouts/tinymce";
+@import "layouts/clubplanner";

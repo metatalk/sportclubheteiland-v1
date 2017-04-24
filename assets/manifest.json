@@ -1,6 +1,9 @@
 {
   "dependencies": {
     "main.js": {
+      "vendor" : [
+        "assets/scripts/dialog.js"
+      ],
       "files": [
         "scripts/main.js"
       ],
@@ -22,6 +25,6 @@
     }
   },
   "config": {
-    "devUrl": "http://example.dev"
+    "devUrl": "http://sportclubheteiland.dev"
   }
 }

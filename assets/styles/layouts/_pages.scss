@@ -1,0 +1,116 @@
+.content-grid {
+  &__row {
+
+    &--sport img {
+      max-width: 130px;
+    }
+
+    &--sport {
+      border: 5px solid #FFF;
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    @include media("≥desktop") {
+      @include grid(2, 0);
+      width: 100%;
+
+      &--sport {
+        @include grid(3, 0);
+      }
+
+      &--sport img {
+        max-width: 210px;
+      }
+      &--reverse {
+        flex-direction: row-reverse;
+      }
+      &--header {
+        .content-grid__block {
+          min-height: 90vh;
+        }
+      }
+      &--sport:nth-child(odd) {
+        flex-direction: row-reverse;
+      }
+    }
+    @include media(">huge") {
+      &--sport img {
+        max-width: 320px;
+      }
+    }
+
+
+  }
+  &__block {
+    background-size: cover;
+    min-height: 35vh;
+    text-align: center;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    display: block;
+
+    &--inverse {
+      background: #191919;
+      color: #FFF;
+    }
+    &--gradient {
+      background: linear-gradient(to bottom right, transparentize($color-main-primary,0.06), transparentize($color-main-secundary,0.16));
+    }
+    &--no-gutter {
+      padding: 0;
+    }
+    &--overlay,
+    &--overlay:visited {
+
+      position: relative;
+      color: #FFF;
+      border: 5px solid #FFF;
+      text-decoration: none;
+      @include media("<desktop") {
+        padding: 50px 30px 40px 30px;
+        min-height: auto;
+      }
+      &:hover {
+        .home__sport-bg {
+          transform: scale(1.1);
+        }
+      }
+    }
+    @include media("≥desktop") {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      &--overlay {
+        min-height: 50vh;
+        padding: 0;
+      }
+      /*width: 40%;
+      &:first-child {
+        width: 60%;
+      }*/
+    }
+    &--fitness  { background: linear-gradient(to bottom right, transparentize($color-fitness-primary,0.15), transparentize($color-fitness-secundary,0.12)); }
+    &--boxing-physics  { background: linear-gradient(to bottom right, transparentize($color-boxing-primary,0.05),80%, transparentize($color-boxing-secundary,0.3)); }
+    &--yoga  { background: linear-gradient(to bottom right, transparentize($color-yoga-primary,0.05), transparentize($color-yoga-secundary,0.2)); }
+    &--urban-cross-workout  { background: linear-gradient(to bottom right, transparentize($color-urbancross-primary,0.14), transparentize($color-urbancross-secundary,0.2)); }
+    &--cycling  { background: linear-gradient(to bottom right, transparentize($color-cycling-primary,0.06), transparentize($color-cycling-secundary,0.03)); }
+    &--body-fit  { background: linear-gradient(to bottom right, transparentize($color-bodyfit-primary,0.06), transparentize($color-bodyfit-secundary,0.16)); }
+    &--running  { background: linear-gradient(to bottom right, transparentize($color-running-primary,0.06), transparentize($color-running-secundary,0.33)); }
+    &--impact { background: linear-gradient(to bottom right, transparentize($color-impact-primary,0.16), transparentize($color-impact-secundary,0.26)); }
+
+  }
+  &__content {
+    max-width: 500px;
+    position: relative;
+    z-index: 10;
+  }
+
+}
+
+.contact-hours {
+  margin-bottom: 40px;
+}

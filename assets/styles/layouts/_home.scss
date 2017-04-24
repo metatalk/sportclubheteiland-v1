@@ -1,0 +1,165 @@
+.home-header {
+  text-align: center;
+  overflow: hidden;
+  position: relative;
+  &__logo {
+    padding: 30px;
+    max-width: 300px;
+
+    @include media("≥desktop") {
+      max-width: 370px;
+      margin-top: -150px;
+    }
+    @include media(">huge") {
+      max-width: 450px;
+    }
+  }
+  &__bg {
+    min-height: 100vh;
+    background: url(../images/home3.jpg) no-repeat bottom center;
+    background-size: cover;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+  }
+  &__cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .button {
+      margin-top: 30px;
+    }
+  }
+  .down {
+    z-index: 5;
+    @include media("≥desktop") {
+      &__arrow-svg {
+        stroke: #000;
+      }
+      &:after,
+      &:before {
+        border-color: #000;
+      }
+    }
+  }
+}
+
+.home-header___sports-logos {
+  @include grid(2, 0);
+  padding: 10px 0;
+  display: none;
+  position: absolute;
+  z-index: 1;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: #FFF;
+  max-height: 250px;
+  @include media("≥desktop") {
+    display: block;
+    @include grid(6, 0);
+    padding: 20px 0 60px 0;
+  }
+  align-items: center;
+  justify-content: center;
+  a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+    max-width: 250px;
+  }
+  img {
+    max-width: 100px;
+    @include media(">huge") {
+      max-width: 150px;
+    }
+    vertical-align: middle;
+  }
+}
+
+
+.home-sports {
+
+  &__header {
+    padding: 80px 20px 30px 20px;
+    text-align: center;
+  }
+}
+
+.home-sports-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 80px 0;
+}
+
+
+.home__sport-bg {
+  transition: transform 0.4s;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  opacity: 0.2;
+}
+
+.home-footer {
+  background: #111;
+  color: #FFF;
+  padding: 30px 0;
+  text-align: center;
+  a {
+    color: #FFF;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  &__icon {
+    width: 50px;
+    padding: 30px 0;
+  }
+  &__pages {
+    list-style: none;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    @include media("≥desktop") {
+      padding: 30px 0;
+    }
+    a {
+      color: #FFF;
+      font-family: 'Oswald', sans-serif;
+      text-decoration: none;
+      text-transform: uppercase;
+      font-size: 20px;
+      padding: 4px 15px;
+      display: block;
+    }
+  }
+  &__hours {
+    text-align: center;
+  }
+}
+
+.header-about {
+  background: url(../images/team.jpg) no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  text-align: center;
+  position: relative;
+  img {
+    max-width: 250px;
+    padding-top: 40px;
+  }
+
+}

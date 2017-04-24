@@ -1,0 +1,78 @@
+@mixin brand-gradient() {
+  background: linear-gradient(to bottom right, transparentize($color-main-primary,0.06), transparentize($color-main-secundary,0.16));
+  .sport--fitness & { background: linear-gradient(to bottom right, transparentize($color-fitness-primary,0.15), transparentize($color-fitness-secundary,0.12)); }
+  .sport--boxing-physics & { background: linear-gradient(to bottom right, transparentize($color-boxing-primary,0.05), transparentize($color-boxing-secundary,0.3)); }
+  .sport--yoga & { background: linear-gradient(to bottom right, transparentize($color-yoga-primary,0.05), transparentize($color-yoga-secundary,0.2)); }
+  .sport--urban-cross-workout & { background: linear-gradient(to bottom right, transparentize($color-urbancross-primary,0.14), transparentize($color-urbancross-secundary,0.2)); }
+  .sport--cycling & { background: linear-gradient(to bottom right, transparentize($color-cycling-primary,0.06), transparentize($color-cycling-secundary,0.03)); }
+  .sport--body-fit & { background: linear-gradient(to bottom right, transparentize($color-bodyfit-primary,0.06), transparentize($color-bodyfit-secundary,0.16)); }
+  .sport--running & { background: linear-gradient(to bottom right, transparentize($color-running-primary,0.06), transparentize($color-running-secundary,0.33)); }
+  .sport--impact & { background: linear-gradient(to bottom right, transparentize($color-impact-primary,0.16), transparentize($color-impact-secundary,0.26)); }
+  .main-brand & { background: linear-gradient(to bottom right, transparentize($color-main-primary,0.06), transparentize($color-main-secundary,0.16)); }
+}
+
+@mixin brand-background-primary() {
+  .sport--fitness & { background: $color-fitness-primary; };
+  .sport--boxing-physics & { background: $color-boxing-primary; };
+  .sport--urban-cross-workout & { background: $color-urbancross-primary; };
+  .sport--yoga & { background: $color-yoga-primary; };
+  .sport--cycling & { background: $color-cycling-primary; };
+  .sport--body-fit & { background: $color-bodyfit-primary; };
+  .sport--running & { background: $color-running-primary; };
+  .sport--impact & { background: $color-impact-primary; };
+}
+
+@mixin brand-text-primary() {
+  .sport--fitness & { color: $color-fitness-primary; };
+  .sport--boxing-physics & { color: $color-boxing-primary; };
+  .sport--urban-cross-workout & { color: $color-urbancross-primary; };
+  .sport--yoga & { color: $color-yoga-primary; };
+  .sport--cycling & { color: $color-cycling-primary; };
+  .sport--body-fit & { color: $color-bodyfit-primary; };
+  .sport--running & { color: $color-running-primary; };
+  .sport--impact & { color: $color-impact-primary; };
+}
+
+@mixin brand-background-primary-faded() {
+  .sport--fitness & { background: transparentize($color-fitness-primary,0.1); };
+  .sport--boxing-physics & { background: transparentize($color-boxing-primary,0.06); };
+  .sport--urban-cross-workout & { background: transparentize($color-urbancross-primary,0.06); };
+  .sport--yoga & { background: transparentize($color-yoga-primary,0.06); };
+  .sport--cycling & { background: transparentize($color-cycling-primary,0.06); };
+  .sport--body-fit & { background: transparentize($color-bodyfit-primary,0.06); };
+  .sport--running & { background: transparentize($color-running-primary,0.06); };
+  .sport--impact & { background: transparentize($color-impact-primary,0.06); };
+}
+
+@mixin brand-background-secundary() {
+  .sport--fitness & { background: $color-fitness-secundary; };
+  .sport--boxing-physics & { background: $color-boxing-secundary; };
+  .sport--urban-cross-workout & { background: $color-urbancross-secundary; };
+  .sport--yoga & { background: $color-yoga-secundary; };
+  .sport--cycling & { background: $color-cycling-secundary; };
+  .sport--body-fit & { background: $color-bodyfit-secundary; };
+  .sport--running & { background: darken($color-running-secundary,12%); };
+  .sport--impact & { background: $color-impact-secundary; };
+}
+
+@mixin brand-stroke-secundary() {
+  .sport--fitness & { stroke: $color-fitness-secundary; };
+  .sport--boxing-physics & { stroke: $color-boxing-secundary; };
+  .sport--urban-cross-workout & { stroke: $color-urbancross-secundary; };
+  .sport--yoga & { stroke: $color-yoga-secundary; };
+  .sport--cycling & { stroke: $color-cycling-secundary; };
+  .sport--body-fit & { stroke: $color-bodyfit-secundary; };
+  .sport--running & { stroke: $color-running-secundary; };
+  .sport--impact & { stroke: $color-impact-secundary; };
+}
+
+@mixin brand-fill-secundary() {
+  .sport--fitness & { fill: $color-fitness-secundary; };
+  .sport--boxing-physics & { fill: $color-boxing-secundary; };
+  .sport--urban-cross-workout & { fill: $color-urbancross-secundary; };
+  .sport--yoga & { fill: $color-yoga-secundary; };
+  .sport--cycling & { fill: $color-cycling-secundary; };
+  .sport--body-fit & { fill: $color-bodyfit-secundary; };
+  .sport--running & { fill: darken($color-running-secundary,7%); };
+  .sport--impact & { fill: $color-impact-secundary; };
+}

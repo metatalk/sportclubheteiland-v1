@@ -1,1 +1,29 @@
+* {
+  box-sizing: border-box;
+}
 
+img {
+  max-width: 100%;
+}
+
+.wrap {
+  min-width: 100vw;
+  background-color: #fff;
+  position: relative;
+  top: 0;
+  bottom: 100%;
+  left: 0;
+}
+
+.vertical-center {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+}
+
+.is-nav-active {
+  overflow: hidden;
+  .wrap {
+    overflow: hidden;
+  }
+}

@@ -1,0 +1,68 @@
+.clubplanner {
+  padding: 20px;
+  max-width: 1024px;
+  margin: 0 auto;
+  @include media("≥desktop") {
+    display: flex;
+  }
+  &__inner {
+    padding: 40px 0;
+    @include media("≥desktop") {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100vh;
+    }
+  }
+  &__form {
+    @include media("≥desktop") {
+      width: 50%;
+      padding-top: 30px;
+    }
+  }
+}
+
+.clubplanner-splash {
+  background: #000;
+  color: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 0 30px;
+  &__inner {
+    max-width: 600px;
+  }
+  a {
+    color: #FFF;
+    display: inline-block;
+    padding: 6px 0;
+    font-weight: bold;
+    font-size: 24px;
+  }
+  small {
+    display: block;
+  }
+  .lead {
+    margin-left: 0;
+    margin-right: 0;
+    margin-bottom: 30px;
+  }
+  img {
+    margin-bottom: 30px;
+  }
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 40px;
+  }
+}
+
+.page-template-template-clubplanner-splash {
+  .nav-trigger,
+  .nav-trigger--sec {
+    display: none;
+  }
+}

@@ -15,7 +15,10 @@ $sage_includes = [
   'lib/setup.php',     // Theme setup
   'lib/titles.php',    // Page titles
   'lib/wrapper.php',   // Theme wrapper class
-  'lib/customizer.php' // Theme customizer
+  'lib/customizer.php', // Theme customizer,
+  'lib/posttype-sport.php',
+  'lib/posttype-event.php',
+  'lib/clubplanner.php'
 ];
 
 foreach ($sage_includes as $file) {
@@ -26,3 +29,13 @@ foreach ($sage_includes as $file) {
   require_once $filepath;
 }
 unset($file, $filepath);
+
+add_filter( 'gform_field_value_sport', 'my_custom_population_function' );
+function my_custom_population_function( $value ) {
+    global $post;
+    return $post->post_name;
+}
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );

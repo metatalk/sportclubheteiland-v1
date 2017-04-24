@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="baa962c6-409a-4785-87e0-a73f3f11f702" name="Sportclub Eiland Dev" url="http://185.66.248.157">
+        <fileTransfer host="185.66.248.157" port="22" rootFolder="/var/www/preview/sportclubeiland" accessType="SFTP" password="dfdadff9df93dfd9dfc0dfc0dfc1dfcfdfd2" username="root">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
